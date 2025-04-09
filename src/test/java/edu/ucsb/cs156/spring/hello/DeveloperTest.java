@@ -22,9 +22,31 @@ public class DeveloperTest {
 
     @Test
     public void getName_returns_correct_name() {
-        // TODO: Replace Chris G. with your name as shown on
-        // <https://bit.ly/cs156-s25-teams>
-        assertEquals("Chris G.", Developer.getName());
+        assertEquals("Mihir K", Developer.getName());
+    }
+
+    @Test
+    public void getGithubId_returns_correct_id() {
+        assertEquals("mihir-r-kondapalli", Developer.getGithubId());
+    }
+
+    @Test
+    public void getTeam_returns_correct_members() {
+        Team correct_team = new Team("s25-10");
+        correct_team.addMember("Andrew C");
+        correct_team.addMember("Benjamin S");
+        correct_team.addMember("Junjie L");
+        correct_team.addMember("Linghe Z");
+        correct_team.addMember("Mihir K");
+        correct_team.addMember("Milad H");
+        Team dteam = Developer.getTeam();
+        assert(dteam.getName() == "s25-10");
+        assert(dteam.getMembers().contains("Andrew C"));
+        assert(dteam.getMembers().contains("Benjamin S"));
+        assert(dteam.getMembers().contains("Junjie L"));
+        assert(dteam.getMembers().contains("Linghe Z"));
+        assert(dteam.getMembers().contains("Mihir K"));
+        assert(dteam.getMembers().contains("Milad H"));
     }
 
     // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
